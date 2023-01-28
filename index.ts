@@ -14,17 +14,17 @@ const main = async () => {
       "mumbai"
     );
 
-    const edition = await sdk.getContract("0xb48fAf5A2B3Ef7a28919AB45e93e9Da1F90dA598","edition")
+    const edition = await sdk.getContract("0xA958176D10b9F3d157b8afed0e019bba74D5F9bA","edition")
 
-    const pack = await sdk.getContract("0x2dDCb0F088312eEa656783FCbdC7e20F8Fd9cbE5","pack")
+    const pack = await sdk.getContract("0x338656979086953eb44eC4Fb39649A4e06742521","pack")
 
     await edition.setApprovalForAll(pack.getAddress(), true)
 
     await pack.create({
       packMetadata:{
-        name: "SK_Lootbox",
-        image: readFileSync("./assets/SilverKnightsRender.png"),
-        description: "This lootbox randomly drops card skin from Silver Knights Pack"
+        name: "LM_Lootbox",
+        image: readFileSync("./assets/OnceUponATimeRender.png"),
+        description: "This lootbox randomly drops card skin from Love is a Myth Pack"
       },
       erc1155Rewards:[
         {
